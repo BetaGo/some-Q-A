@@ -1,15 +1,27 @@
 * **Q**:
-    vscode 的 jest 插件报错: `jest watch Error， too many restart`。
+    android studio 启动 `emulator -avd` 报错 `libGL error: unable to load driver: i965_dri.so`
 
-    * date: 2017-10-19  
-    * system: ubuntu16.04  
-    * vscode version: 1.17.2  
+    * date: 2017-10-24  
+    * system: ubuntu17.10
 
   **A**:
-    Without using watchman, this can be fixed by increasing the number of inotify watches using
+    指令后面加入 `-use-system-libs`。
+    例如：
+    `emulator -avd Nexus_5X_API_23 -use-system-libs`
+    其他解决方案参见来源。
+  >来源： https://bbs.archlinux.org/viewtopic.php?id=213192
+  ---
 
-    `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
-  > 来源:  https://github.com/fbsamples/f8app/issues/55
+* **Q**:
+    从源码构建 watchman 报错 make fatal error: openssl/sha.h: No such file or directory
+
+    * date: 2017-10-24  
+    * system: ubuntu17.10
+
+  **A**:
+    `sudo apt install libssl-dev`
+
+  >来源： https://github.com/facebook/watchman/issues/529
 ---
 
 * **Q**:
@@ -30,12 +42,15 @@
 ---
 
 * **Q**:
-    从源码构建 watchman 报错 make fatal error: openssl/sha.h: No such file or directory
+    vscode 的 jest 插件报错: `jest watch Error， too many restart`。
 
-    * date: 2017-10-24  
-    * system: ubuntu17.10
+    * date: 2017-10-19  
+    * system: ubuntu16.04  
+    * vscode version: 1.17.2  
 
   **A**:
-    `sudo apt install libssl-dev`
+    Without using watchman, this can be fixed by increasing the number of inotify watches using
 
-  >来源： https://github.com/facebook/watchman/issues/529
+    `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+  > 来源:  https://github.com/fbsamples/f8app/issues/55
+---
