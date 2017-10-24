@@ -27,3 +27,15 @@
       $ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 
   > 来源： http://android-er.blogspot.com/2017/05/fix-unable-to-run-mksdcard-sdk-tool.html
+---
+
+* **Q**:
+    从源码构建 watchman 报错 make fatal error: openssl/sha.h: No such file or directory
+
+    * date: 2017-10-24  
+    * system: ubuntu17.10
+
+  **A**:
+    `sudo apt install libssl-dev`
+
+  >来源： https://github.com/facebook/watchman/issues/529
