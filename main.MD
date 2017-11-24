@@ -1,3 +1,17 @@
+
+* **Q**:
+    window10 和 ubuntu17.10 系统时间不一致的问题
+
+    * date: 2017-11-24  
+    * system: ubuntu17.10 / windows10
+
+  **A**:
+    `sudo hwclock -w --localtime`
+    其他解决方案参见来源。
+  >来源： http://blog.csdn.net/qq_21397217/article/details/52439111
+  ---
+
+
 * **Q**:
     android studio 启动 `emulator -avd` 报错 `libGL error: unable to load driver: i965_dri.so`
 
